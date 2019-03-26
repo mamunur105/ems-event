@@ -1,6 +1,6 @@
 <?php
 /**
- * 
+ *  event plugins custom post 
  */
 namespace admin;
 class Event

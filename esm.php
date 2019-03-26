@@ -3,7 +3,7 @@
   @package ESM
   @version 1.0
 /*
-Plugin Name: ESM
+Plugin Name: ESM Event
 Plugin URI: http://www.weborigin.org
 Description:  This is a Ccompanion Plugin for Event Management system
 Author: weborigin
