@@ -10,8 +10,10 @@ class ComposerStaticInitaa6ce6bb018d019815f4e70cf3983f43
         'ComposerAutoloaderInitaa6ce6bb018d019815f4e70cf3983f43' => __DIR__ . '/..' . '/composer/autoload_real.php',
         'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
         'Composer\\Autoload\\ComposerStaticInitaa6ce6bb018d019815f4e70cf3983f43' => __DIR__ . '/..' . '/composer/autoload_static.php',
+        'Config' => __DIR__ . '/../..' . '/config/Config.php',
         'EMS' => __DIR__ . '/../..' . '/esm.php',
-        'admin\\Event' => __DIR__ . '/../..' . '/admin/aditionalpost.php',
+        'Event' => __DIR__ . '/../..' . '/admin/Event.php',
+        'Imageupload' => __DIR__ . '/../..' . '/admin/Imageupload.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
