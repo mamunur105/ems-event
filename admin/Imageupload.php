@@ -1,9 +1,9 @@
 <?php
 
 
-// namespace admin;
+namespace Admin;
 
-class  Imageupload extends WP_Widget {
+class  Imageupload extends \WP_Widget {
 
 	function __construct() {
 		// Instantiate the parent objectAdvertisement
@@ -40,11 +40,6 @@ class  Imageupload extends WP_Widget {
 	 }
 }
 
-function ImageUpload_widget_register_widgets() {
-	register_widget( 'ImageUpload' );
-}
-
-add_action( 'widgets_init', 'ImageUpload_widget_register_widgets' );
 
 
 

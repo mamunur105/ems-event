@@ -11,10 +11,13 @@ Version: 1.0
 Author URI: http://weborigin.org/
 */
 
-
 /**
  * Plugins main Class
  */
+namespace EMS\main;
+use Admin\Event;
+use Admin\Imageupload;
+use Config\Config;
 
 class EMS
 {
@@ -29,6 +32,11 @@ class EMS
 		add_action( 'init', [$this,'ems_load_textdomain'] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'stylesheet_js' ] );
 		add_action('admin_enqueue_scripts', [ $this, 'custom_admin_enqueue_script' ]);
+		add_action( 'widgets_init', [ $this, 'ems_register_widgets' ] );
+	}
+
+	function ems_register_widgets() {
+		register_widget( 'Admin\ImageUpload' );
 	}
 	
 	function ems_load_textdomain() {
@@ -56,6 +64,7 @@ class EMS
 	public function ems_activation_time(){}
 	public function ems_deactivation_time(){}
 	public function ems_unistall_time(){}
+
 }
 
 new EMS();

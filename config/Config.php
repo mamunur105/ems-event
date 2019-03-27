@@ -2,7 +2,7 @@
 /**
  * COnfig file for direct access
  */
-// namespace config; 
+namespace Config; 
 class Config
 {
 	public static function directory($dir=''){

@@ -6,20 +6,33 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitaa6ce6bb018d019815f4e70cf3983f43
 {
-    public static $classMap = array (
-        'ComposerAutoloaderInitaa6ce6bb018d019815f4e70cf3983f43' => __DIR__ . '/..' . '/composer/autoload_real.php',
-        'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
-        'Composer\\Autoload\\ComposerStaticInitaa6ce6bb018d019815f4e70cf3983f43' => __DIR__ . '/..' . '/composer/autoload_static.php',
-        'Config' => __DIR__ . '/../..' . '/config/Config.php',
-        'EMS' => __DIR__ . '/../..' . '/esm.php',
-        'Event' => __DIR__ . '/../..' . '/admin/Event.php',
-        'Imageupload' => __DIR__ . '/../..' . '/admin/Imageupload.php',
+    public static $prefixLengthsPsr4 = array (
+        'C' => 
+        array (
+            'Config\\' => 7,
+        ),
+        'A' => 
+        array (
+            'Admin\\' => 6,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'Config\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/config',
+        ),
+        'Admin\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/admin',
+        ),
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInitaa6ce6bb018d019815f4e70cf3983f43::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitaa6ce6bb018d019815f4e70cf3983f43::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitaa6ce6bb018d019815f4e70cf3983f43::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }
