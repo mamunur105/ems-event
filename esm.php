@@ -33,8 +33,6 @@ class EMS
 	{
 		register_activation_hook( __FILE__, [$this,'ems_activation_time'] );
 		register_deactivation_hook( __FILE__, [$this,'ems_deactivation_time'] );
-		// register_uninstall_hook( __FILE__, [$this,'ems_uninstall_time']  );
-
 		add_action( 'init', [$this,'ems_load_textdomain'] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'stylesheet_js' ] );
 		add_action('admin_enqueue_scripts', [ $this, 'custom_admin_enqueue_script' ]);
@@ -77,12 +75,12 @@ class EMS
 
 	public function ems_deactivation_time()
 	{
-		// return $this->ems_delete_table();
+		// $this->ems_delete_table(); 
 	}
 
 	public function ems_uninstall_time()
 	{ 
-		return $this->ems_delete_table(); 
+		$this->ems_delete_table(); 
 	}
 
 	public function ems_create_table()
@@ -148,6 +146,7 @@ class EMS
 			$wpdb->query($sql);
 		}
 	}
+
 }
 
 new EMS();

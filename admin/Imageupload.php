@@ -33,7 +33,7 @@ class Imageupload extends \WP_Widget {
 				<button class="button clear_image right" >clear Image</button>
 				<button class="button author_info_image" >Upload Image</button>
 				<input type="hidden" name="<?php echo $this->get_field_name('image'); ?>" value="<?php echo $image ; ?>" class="widefat image_link" id="<?php echo $this->get_field_id('image')?>" >
-				<span class="image-show"><img class="img-link" src="<?php echo $image  ; ?>" width="100%"></span>	
+				<span class="image-show"><img class="img-link" style="margin-top:10px;" src="<?php echo $image  ; ?>" width="100%"></span>	
 			</p>
 	 
 	 <?php
