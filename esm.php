@@ -79,11 +79,6 @@ class EMS
 		// $this->ems_delete_table(); 
 	}
 
-	public function ems_uninstall_time()
-	{ 
-		return $this->ems_delete_table(); 
-	}
-
 	public function ems_create_table()
 	{
 
@@ -132,21 +127,21 @@ class EMS
 	}
 
 
-	public function ems_delete_table($delete=false )
-	{
-		global $wpdb;
-		$table 		= array();
-		$table[]	= $ems_event = $wpdb->prefix.'esm_events';
-		$table[] 	= $ems_event_country = $wpdb->prefix.'esm_events_country';
-		$table[] 	= $ems_event_city = $wpdb->prefix.'esm_events_city';
-		$table 		= implode(', ', $table);
+	// public function ems_delete_table($delete=false )
+	// {
+	// 	global $wpdb;
+	// 	$table 		= array();
+	// 	$table[]	= $ems_event = $wpdb->prefix.'esm_events';
+	// 	$table[] 	= $ems_event_country = $wpdb->prefix.'esm_events_country';
+	// 	$table[] 	= $ems_event_city = $wpdb->prefix.'esm_events_city';
+	// 	$table 		= implode(', ', $table);
 		
-		if($delete == false){
-			 // drop = DROP TABLE `wp_esm_events`, `wp_esm_events_city`, `wp_esm_events_country`;
-			$sql = "DROP TABLE $table";
-			$wpdb->query($sql);
-		}
-	}
+	// 	if($delete == false){
+	// 		 // drop = DROP TABLE `wp_esm_events`, `wp_esm_events_city`, `wp_esm_events_country`;
+	// 		$sql = "DROP TABLE $table";
+	// 		$wpdb->query($sql);
+	// 	}
+	// }
 
 }
 
