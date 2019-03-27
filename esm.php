@@ -70,6 +70,7 @@ class EMS
 	 
 	public function ems_activation_time()
 	{ 
+		flush_rewrite_rules();
 		$this->ems_create_table();
 	}
 
@@ -80,7 +81,7 @@ class EMS
 
 	public function ems_uninstall_time()
 	{ 
-		$this->ems_delete_table(); 
+		return $this->ems_delete_table(); 
 	}
 
 	public function ems_create_table()
