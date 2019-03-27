@@ -2,7 +2,7 @@
 /**
  *  event plugins custom post 
  */
-// namespace admin;
+namespace Admin;
 class Event
 {
 	
