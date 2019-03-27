@@ -1,9 +1,9 @@
 <?php
-
-
+/*
+image Upload widget 
+*/
 namespace Admin;
-
-class  Imageupload extends \WP_Widget {
+class Imageupload extends \WP_Widget {
 
 	function __construct() {
 		// Instantiate the parent objectAdvertisement
@@ -16,13 +16,13 @@ class  Imageupload extends \WP_Widget {
 		// Widget output
 		echo $args["before_widget"];
 		  $image = (!empty($instance['image'])) ? $instance['image'] : '' ;
-		 ?>
+			 ?>
 
-			<div class="biggapon-style biggapon-style-one">
-				<img class="img-link" src="<?php echo $image  ; ?>" width="100%">
-            </div>
+				<div class="biggapon-style biggapon-style-one">
+					<img class="img-link" src="<?php echo $image  ; ?>" width="100%">
+	            </div>
 
-		<?php
+			<?php
 		echo $args["after_widget"] ;
 	}
 
