@@ -2,7 +2,7 @@
 /**
  *  event plugins custom post 
  */
-namespace Admin;
+namespace ems\apps\admin;
 class Event
 {
 	

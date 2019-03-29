@@ -1,7 +1,7 @@
 {
 	"autoload":{
         "psr-4": {
-	        "Admin\\": "admin/",
+	        "ems\\apps\\admin\\": "apps/admin/",
 	        "Config\\": "config/"
 	    }
 	}

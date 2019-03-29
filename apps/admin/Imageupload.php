@@ -2,7 +2,7 @@
 /*
 image Upload widget 
 */
-namespace Admin;
+namespace ems\apps\admin;
 class Imageupload extends \WP_Widget {
 
 	function __construct() {

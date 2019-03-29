@@ -6,6 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'ems\\apps\\admin\\' => array($baseDir . '/apps/admin'),
     'Config\\' => array($baseDir . '/config'),
-    'Admin\\' => array($baseDir . '/admin'),
 );

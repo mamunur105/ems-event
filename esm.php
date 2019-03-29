@@ -16,8 +16,9 @@ Author URI: http://weborigin.org/
  */
 namespace EMS\Main;
 
-use Admin\Event;
-use Admin\Imageupload;
+use ems\apps\admin\Event;
+use ems\apps\admin\Imageupload;
+use ems\apps\admin\Settings;
 use Config\Config;
 
 class EMS
@@ -41,12 +42,12 @@ class EMS
 
 	public function ems_register_widgets() 
 	{
-		register_widget( 'Admin\ImageUpload' );
+		register_widget( 'ems\apps\admin\ImageUpload' );
 	}
 	
 	public function ems_load_textdomain() 
 	{
-	  	load_plugin_textdomain( 'smsevent', false, basename( dirname( __FILE__ ) ) . '/languages' ); 
+	  	load_plugin_textdomain( 'emsevent', false, basename( dirname( __FILE__ ) ) . '/languages' ); 
 	}
 
 	public function stylesheet_js() 
@@ -65,6 +66,7 @@ class EMS
 	{
 		require_once('vendor/autoload.php');
 		new Imageupload();
+		new Settings();
 		new Event();
 	}
 	 
@@ -126,22 +128,6 @@ class EMS
 
 	}
 
-
-	// public function ems_delete_table($delete=false )
-	// {
-	// 	global $wpdb;
-	// 	$table 		= array();
-	// 	$table[]	= $ems_event = $wpdb->prefix.'esm_events';
-	// 	$table[] 	= $ems_event_country = $wpdb->prefix.'esm_events_country';
-	// 	$table[] 	= $ems_event_city = $wpdb->prefix.'esm_events_city';
-	// 	$table 		= implode(', ', $table);
-		
-	// 	if($delete == false){
-	// 		 // drop = DROP TABLE `wp_esm_events`, `wp_esm_events_city`, `wp_esm_events_country`;
-	// 		$sql = "DROP TABLE $table";
-	// 		$wpdb->query($sql);
-	// 	}
-	// }
 
 }
 

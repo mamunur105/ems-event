@@ -27,8 +27,8 @@ class UninstaEms
 		
 		if($delete == false){
 			 // drop = DROP TABLE `wp_esm_events`, `wp_esm_events_city`, `wp_esm_events_country`;
-			$sql = "DROP TABLE $table";
-			$wpdb->query($sql);
+			// $sql = "DROP TABLE $table";
+			// $wpdb->query($sql);
 		}
 	}
 }
