@@ -1,0 +1,158 @@
+  /* Style the tab */
+  .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+
+  /* Style the buttons inside the tab */
+  .tab a {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+
+  /* Change background color of buttons on hover */
+  .tab a:hover {
+    background-color: #ddd;
+  }
+
+  /* Create an active/current tablink class */
+  .tab a.active {
+    background-color: #ccc;
+  }
+
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+
+
+
+
+
+    .tab_content { 
+    background:#fff;padding:10px;width: auto;
+    overflow: hidden;
+  }
+.tabs li { display:inline;list-style:none ;    margin: 0;}
+.tabs a {
+    background: #7c7c7c;
+    color: #dadada;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 19px;
+    text-decoration: none;
+}
+.tabs a.active { background:#e32d2d;color:#fff }
+#tab-Country{
+
+}
+.wraper {
+    display: flex;
+    flex-direction: row;
+    min-height: 300px;
+}
+#tab-Country {
+    /*min-height: 300px;*/
+}
+.list-country {
+    max-width: 150px;
+    width: 100%;
+    margin: 0;
+    background: #ddd;
+    border: 1px solid #ddd;
+    border-right: 0;
+    padding: 5px 0 5px 5px;
+}
+.list-country .tabs{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+/*ul.mainmenu a,*/
+.list-country .tabs a{
+    padding: 5px;
+    font-size: 14px;
+    line-height: 1.5;
+    text-transform: capitalize;
+    display: block;
+}
+.list-country .tabs a:focus{
+  box-shadow:none;
+}
+.tabs a:focus{
+  box-shadow:none;
+}
+.list-country .tabs a.active{
+    background: #fff;
+    color: #e32d2d;
+}
+.city-list {
+    padding: 14px;
+    border: 6px solid #ddd;
+    border-left: 0px;
+    flex: 1;
+    padding-top: 0;
+}
+.city-list ul{
+    display: flex;
+    max-width: 600px;
+    list-style-type: decimal;
+    padding: 0 25px;
+    flex-wrap: wrap;
+}
+.city-list ul li{
+    flex: 1 0 21%;
+    font-size: 18px;
+    text-transform: capitalize;
+    font-family: serif;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+.city-list .tab_content{
+  padding: 0;
+}
+.tab_content h3 {
+    margin: 0;
+    padding: 15px 0px;
+    font-size: 20px;
+}
+.country-submit {
+    font-size: 17px;
+    background: #e32d2d;
+    color: #fff;
+    border: 1px solid #e32d2d;
+}
+.wrap-from {
+    min-height: 200px;
+    display: flex; 
+}
+.wrap-from input{
+    padding: 5px 10px;
+    height: 35px;
+}
+ul.mainmenu {
+    display: inline-block;
+}
+ul.mainmenu li a{
+    background: #7c7c7c;
+    color: #dadada;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 19px;
+    text-decoration: none;
+}
+ul.mainmenu li a.active {
+    background: #e32d2d;
+    color: #fff;
+}

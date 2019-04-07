@@ -91,18 +91,22 @@ class EMS
 		$ems_event_city = $wpdb->prefix.'esm_events_city';
 
 		if($wpdb->get_var("SHOW TABLES LIKE '$ems_event'") != $ems_event) {
-			$ems_sql = "CREATE TABLE {$ems_event} (
-				 `ems_id` int(11) NOT NULL AUTO_INCREMENT,
-				 `ems_post_id` int(11) NOT NULL,
-				 `ems_start_date` timestamp NULL DEFAULT NULL,
-				 `ems_end_date` timestamp NULL DEFAULT NULL,
-				 `ems_sponsor` varchar(255) DEFAULT NULL,
-				 `ems_featured` int(50) DEFAULT NULL,
-				 `ems_fee` double DEFAULT NULL,
-				 `zip_code` varchar(50) DEFAULT NULL,
-				 `ems_city_id` int(50) DEFAULT NULL,
-				 PRIMARY KEY (`ems_id`)
-				) ENGINE=InnoDB DEFAULT CHARSET=utf8";
+			$ems_sql = "CREATE TABLE `wp_esm_events` (
+					 `ems_id` int(11) NOT NULL AUTO_INCREMENT,
+					 `ems_post_id` int(11) NOT NULL,
+					 `ems_start_date` timestamp NULL DEFAULT NULL,
+					 `ems_end_date` timestamp NULL DEFAULT NULL,
+					 `ems_sponsor` varchar(255) DEFAULT NULL,
+					 `ems_phone` varchar(100) DEFAULT NULL,
+					 `ems_vanue` varchar(100) DEFAULT NULL,
+					 `ems_featured` int(50) DEFAULT NULL,
+					 `ems_fee` double DEFAULT NULL,
+					 `zip_code` varchar(50) DEFAULT NULL,
+					 `ems_city_id` int(50) DEFAULT NULL,
+					 `ems_address` varchar(255) DEFAULT NULL,
+					 `ems_cost` float DEFAULT NULL,
+					 PRIMARY KEY (`ems_id`)
+					) ENGINE=InnoDB DEFAULT CHARSET=utf8";
 			dbDelta($ems_sql);
 		}
 

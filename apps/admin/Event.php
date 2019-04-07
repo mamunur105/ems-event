@@ -14,34 +14,34 @@ class Event
 	}
 	function functuon_hooking(){
 		add_action( 'init', [$this,'register_event'] );
+		add_action( 'init', array( $this, 'register_taxonomies' ) );
 		add_filter( 'post_updated_messages', [$this,'posttype_update_messages']);
 	}
 	function register_event(){
 		$labels = array(
-			'name'               => _x( 'EMS Events', 'post type general name', 'your-plugin-textdomain' ),
-			'singular_name'      => _x( 'Event', 'post type singular name', 'your-plugin-textdomain' ),
-			'menu_name'          => _x( 'Events', 'admin menu', 'your-plugin-textdomain' ),
-			'name_admin_bar'     => _x( 'Event', 'add new on admin bar', 'your-plugin-textdomain' ),
-			'add_new'            => _x( 'Add New', 'book', 'your-plugin-textdomain' ),
-			'add_new_item'       => __( 'Add New Event', 'your-plugin-textdomain' ),
-			'new_item'           => __( 'New Event', 'your-plugin-textdomain' ),
-			'edit_item'          => __( 'Edit Event', 'your-plugin-textdomain' ),
-			'view_item'          => __( 'View Event', 'your-plugin-textdomain' ),
-			'all_items'          => __( 'All Events', 'your-plugin-textdomain' ),
-			'search_items'       => __( 'Search Events', 'your-plugin-textdomain' ),
-			'parent_item_colon'  => __( 'Parent Events:', 'your-plugin-textdomain' ),
-			'not_found'          => __( 'No books found.', 'your-plugin-textdomain' ),
-			'not_found_in_trash' => __( 'No books found in Trash.', 'your-plugin-textdomain' )
+			'name'               => _x( 'EMS Events', 'post type general name', 'emsevent' ),
+			'singular_name'      => _x( 'Event', 'post type singular name', 'emsevent' ),
+			'menu_name'          => _x( 'Events', 'admin menu', 'emsevent' ),
+			'name_admin_bar'     => _x( 'Event', 'add new on admin bar', 'emsevent' ),
+			'add_new'            => _x( 'Add New', 'book', 'emsevent' ),
+			'add_new_item'       => __( 'Add New Event', 'emsevent' ),
+			'new_item'           => __( 'New Event', 'emsevent' ),
+			'edit_item'          => __( 'Edit Event', 'emsevent' ),
+			'view_item'          => __( 'View Event', 'emsevent' ),
+			'all_items'          => __( 'All Events', 'emsevent' ),
+			'search_items'       => __( 'Search Events', 'emsevent' ),
+			'parent_item_colon'  => __( 'Parent Events:', 'emsevent' ),
+			'not_found'          => __( 'No books found.', 'emsevent' ),
+			'not_found_in_trash' => __( 'No books found in Trash.', 'emsevent' )
 		);
 		$args = array(
 			'labels'             => $labels,
-	                'description'        => __( 'Description.', 'your-plugin-textdomain' ),
+	                'description'        => __( 'Description.', 'emsevent' ),
 			'public'             => true,
 			'publicly_queryable' => true,
 			'show_ui'            => true,
 			'show_in_menu'       => true,
 			'query_var'          => true,
-			// 'rewrite'            => array( 'slug' => 'ems-events' ),
 			'rewrite'             => array(
 				'slug'       => apply_filters( 'ems_event_slug', 'ems-events' ),
 				'with_front' => false
@@ -53,6 +53,31 @@ class Event
 			'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
 		);
 		register_post_type( 'ems_events', $args );
+	}
+	function register_taxonomies(){
+		$labels = array(
+			'name'               => 'Event Category',
+			'all_items'          => sprintf( __( "All %s", 'emsevent' ), 'Event Categories' ),
+			'singular_name'      =>  __( 'Event Category', 'emsevent' ),
+			'add_new'            => sprintf( __( 'New %s', 'emsevent' ), 'Event Category' ),
+			'add_new_item'       => sprintf( __( 'Add New %s', 'emsevent' ), 'Event Category' ),
+			'edit_item'          => sprintf( __( 'Edit %s', 'emsevent' ), 'Event Category' ),
+			'new_item'           => sprintf( __( 'New %s', 'emsevent' ), 'Event Category' ),
+			'view_item'          => sprintf( __( 'View %s', 'emsevent' ), 'Event Category' ),
+			'search_items'       => sprintf( __( 'Search %s', 'emsevent' ), 'Event Categories' ),
+			'not_found'          => sprintf( __( 'No %s found', 'emsevent' ), 'Event Categories' ),
+			'not_found_in_trash' => sprintf( __( 'No %s found in Trash', 'emsevent' ), 'Event Categories' ),
+			'parent_item_colon'  => sprintf( __( 'Parent %s:', 'emsevent' ), 'Event Category' ),
+			'menu_name'          => 'Event Category',
+		);
+		register_taxonomy( 'ems_event_category', array( 'ems_events' ), array(
+			'hierarchical'      => true,
+			'labels'            => $labels,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'query_var'         => true,
+			'rewrite'           => array( 'slug' => apply_filters( 'emsevent_category_slug', 'emsevent-category' ) )
+		) );
 	}
 
 	function posttype_update_messages( $messages ) {
