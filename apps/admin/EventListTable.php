@@ -3,19 +3,15 @@
  *
  */
 
-namespace ems\apps\admin; 
-
-if(!class_exists('\WP_List_Table')){
-   require_once( ABSPATH.'wp-admin/includes/class-wp-list-table.php' ); 
+namespace ems\apps\admin;
+ if ( ! class_exists( 'WP_List_Table' ) ) {
+    require_once( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' );
 }
+
 
 class EventListTable extends \WP_List_Table
 {
 
-  // function __construct()
-  // {
-  //   parent::__construct();
-  // }
 
   public function prepare_items(){
     $orderby = isset($_GET['orderby']) ? trim($_GET['orderby']):"" ;

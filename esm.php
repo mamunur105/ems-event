@@ -29,9 +29,9 @@ class EMS
 	public function __construct()
 	{
 		$this->include_file();                                                                                
-		$this->functuon_hooking();                                                                       
+		$this->functuon_hooking();
+                                                                    
 	}
-
 	public function functuon_hooking()
 	{
 		register_activation_hook( __FILE__, [$this,'ems_activation_time'] );
@@ -40,6 +40,11 @@ class EMS
 		add_action( 'wp_enqueue_scripts', [ $this, 'stylesheet_js' ] );
 		add_action('admin_enqueue_scripts', [ $this, 'custom_admin_enqueue_script' ]);
 		add_action( 'widgets_init', [ $this, 'ems_register_widgets' ] );
+		add_action( 'wp', [$this,'after_load_wordpress'] ); 
+	}
+
+	function after_load_wordpress(){
+		new EventListTable(); 
 	}
 
 	public function ems_register_widgets() 
@@ -70,7 +75,7 @@ class EMS
 		new Imageupload();
 		new Settings();
 		new Event();
-		// new EventListTable();    
+ 
 	}
 	 
 	public function ems_activation_time()
