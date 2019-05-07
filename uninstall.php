@@ -25,7 +25,7 @@ class UninstaEms
 		$table[] 	= $ems_event_city = $wpdb->prefix.'esm_events_city';
 		$table 		= implode(', ', $table);
 		
-		if($delete == false){
+		if($delete == true){
 			 // drop = DROP TABLE `wp_esm_events`, `wp_esm_events_city`, `wp_esm_events_country`;
 			// $sql = "DROP TABLE $table";
 			// $wpdb->query($sql);

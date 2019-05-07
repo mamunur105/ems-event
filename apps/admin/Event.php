@@ -2,6 +2,7 @@
 /**
  *  event plugins custom post 
  */
+
 namespace ems\apps\admin;
 class Event
 {
@@ -20,7 +21,7 @@ class Event
 	function register_event(){
 		$labels = array(
 			'name'               => _x( 'EMS Events', 'post type general name', 'emsevent' ),
-			'singular_name'      => _x( 'Event', 'post type singular name', 'emsevent' ),
+			'singular_name'      => _x( 'EMS Event', 'post type singular name', 'emsevent' ),
 			'menu_name'          => _x( 'Events', 'admin menu', 'emsevent' ),
 			'name_admin_bar'     => _x( 'Event', 'add new on admin bar', 'emsevent' ),
 			'add_new'            => _x( 'Add New', 'book', 'emsevent' ),

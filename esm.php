@@ -16,9 +16,11 @@ Author URI: http://weborigin.org/
  */
 namespace EMS\Main;
 
+use ems\apps\admin\EventListTable as EventListTable; 
 use ems\apps\admin\Event;
 use ems\apps\admin\Imageupload;
 use ems\apps\admin\Settings;
+
 use Config\Config;
 
 class EMS
@@ -68,6 +70,7 @@ class EMS
 		new Imageupload();
 		new Settings();
 		new Event();
+		// new EventListTable();    
 	}
 	 
 	public function ems_activation_time()
